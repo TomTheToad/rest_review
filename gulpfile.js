@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
+const del = require('del');
 
 // Compile css
 function style() {
@@ -21,44 +22,41 @@ function _clean() {
 
 // TODO: test
 function _copyHTML() {
-    gulp
+    return gulp
         .src('./src/*.html')
         .pipe(gulp.dest('./public'))
         .pipe(browserSync.stream());
 }
 
 function _copyJS() {
-    gulp
+    return gulp
         .src('./src/js/*.js')
         .pipe(gulp.dest('./public/js'))
         .pipe(browserSync.stream());
 }
 
 function _copyData() {
-    gulp
+    return gulp
         .src('./src/data/*.json')
         .pipe(gulp.dest('./public/data'))
         .pipe(browserSync.stream());
 }
 
 function _copyIMG() {
-    gulp
+    return gulp
         .src('./src/img/*.jpg')
         .pipe(gulp.dest('./public/img'))
         .pipe(browserSync.stream());
 }
 
-function rebuildPublic() {
-    clean();
-    _copyData();
-    _copyIMG();
-    _copyJS();
-    _copyHTML();
-}
+const rebuild = gulp.series(_clean, _copyData, _copyIMG, _copyJS, _copyHTML, style);
 
 function watch() {
     browserSync.init({
-        server: { baseDir: './public' }
+        server: {
+            baseDir: './public/',
+            port: 3000
+        }
     });
 
     // sass - css
@@ -68,11 +66,12 @@ function watch() {
     gulp.watch('./src/*.html').on('change', _copyHTML);
     gulp.watch('./src/*.html').on('change', browserSync.reload);
 
+    // js
     gulp.watch('./src/js/**/*.js').on('change', _copyJS);
     gulp.watch('./src/js/**/*.js').on('change', browserSync.reload);
 }
 
 // Define tasks
-exports.rebuildPublic = rebuild;
+exports.rebuild = rebuild;
 exports.style = style;
 exports.watch = watch;
