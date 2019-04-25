@@ -1,8 +1,16 @@
 let restaurants,
   neighborhoods,
-  cuisines
-var newMap
-var markers = []
+  cuisines,
+var newMap;
+var mar``kers = [];
+
+// Mark: ServiceWorker begin
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('./js/sw.js')
+    .then(reg => console.log(`SW reg success: ${reg}`))
+    .catch(err => console.log(`SW reg failed: ${error}`));
+}
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
