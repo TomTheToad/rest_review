@@ -1,15 +1,15 @@
 let restaurants,
   neighborhoods,
-  cuisines,
-var newMap;
-var mar``kers = [];
+  cuisines
+var newMap
+var markers = []
 
 // Mark: ServiceWorker begin
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('./js/sw.js')
     .then(reg => console.log(`SW reg success: ${reg}`))
-    .catch(err => console.log(`SW reg failed: ${error}`));
+    .catch(err => console.log(`SW reg failed: ${err}`));
 }
 
 /**

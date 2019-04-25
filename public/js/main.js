@@ -4,12 +4,12 @@ let restaurants,
 var newMap
 var markers = []
 
-// TODO: service worker here
+// Mark: ServiceWorker begin
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('./js/sw.js')
     .then(reg => console.log(`SW reg success: ${reg}`))
-    .catch(err => console.log(`SW reg failed: ${error}`));
+    .catch(err => console.log(`SW reg failed: ${err}`));
 }
 
 /**
