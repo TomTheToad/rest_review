@@ -61,6 +61,7 @@ const rebuild = gulp.series(_clean, _copyData, _copyIMG, _copyJS, _copyHTML, _co
 
 function watch() {
     browserSync.init({
+        browser: "Google Chrome Canary",
         server: {
             baseDir: './public/',
             port: 3000
