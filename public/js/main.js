@@ -7,8 +7,8 @@ var markers = []
 // Mark: ServiceWorker begin
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('./js/sw.js')
-    .then(reg => console.log(`SW reg success: ${reg}`))
+    .register('sw.js')
+    // .then(reg => console.log(`SW reg success: ${reg}`))
     .catch(err => console.log(`SW reg failed: ${err}`));
 }
 
@@ -206,6 +206,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 }
+
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map

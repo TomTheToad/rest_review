@@ -35,6 +35,14 @@ function _copyJS() {
         .pipe(browserSync.stream());
 }
 
+// TODO: find a better way
+function _copySW() {
+    return gulp
+        .src('./src/sw.js')
+        .pipe(gulp.dest('./public'))
+        .pipe(browserSync.stream());
+}
+
 function _copyData() {
     return gulp
         .src('./src/data/*.json')
@@ -49,7 +57,7 @@ function _copyIMG() {
         .pipe(browserSync.stream());
 }
 
-const rebuild = gulp.series(_clean, _copyData, _copyIMG, _copyJS, _copyHTML, style);
+const rebuild = gulp.series(_clean, _copyData, _copyIMG, _copyJS, _copyHTML, _copySW, style);
 
 function watch() {
     browserSync.init({
@@ -69,6 +77,9 @@ function watch() {
     // js
     gulp.watch('./src/js/**/*.js').on('change', _copyJS);
     gulp.watch('./src/js/**/*.js').on('change', browserSync.reload);
+
+    // sw
+    gulp.watch('./src/sw.js').on('change', _copySW);
 }
 
 // Define tasks
