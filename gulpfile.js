@@ -61,7 +61,7 @@ const rebuild = gulp.series(_clean, _copyData, _copyIMG, _copyJS, _copyHTML, _co
 
 function watch() {
     browserSync.init({
-        browser: "Google Chrome Canary",
+        browser: "Google Chrome",
         server: {
             baseDir: './public/',
             port: 3000
@@ -69,7 +69,11 @@ function watch() {
     });
 
     // sass - css
-    gulp.watch('./src/scss/**/*.scss');
+    // gulp.watch('./src/scss/**/*.scss').on('change', browserSync.reload);
+    gulp.watch('./src/scss/**/*.scss').on('change', style);
+    // TODO: This shouldn't be necessary but it's failing to show changes without
+    gulp.watch('./src/scss/**/*.scss').on('change', browserSync.reload);
+
 
     // html
     gulp.watch('./src/*.html').on('change', _copyHTML);
