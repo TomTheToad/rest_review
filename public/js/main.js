@@ -96,18 +96,6 @@ initMap = () => {
 
   updateRestaurants();
 }
-/* window.initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
-} */
 
 /**
  * Update page and map for current restaurants.
@@ -138,7 +126,7 @@ updateRestaurants = () => {
 resetRestaurants = (restaurants) => {
   // Remove all restaurants
   self.restaurants = [];
-  const ul = document.getElementById('restaurants-list');
+  const ul = document.getElementById('cards');
   ul.innerHTML = '';
 
   // Remove all map markers
@@ -153,9 +141,9 @@ resetRestaurants = (restaurants) => {
  * Create all restaurants HTML and add them to the webpage.
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
-  const ul = document.getElementById('restaurants-list');
+  const card = document.getElementById('cards');
   restaurants.forEach(restaurant => {
-    ul.append(createRestaurantHTML(restaurant));
+    card.append(createRestaurantHTML(restaurant));
   });
   addMarkersToMap();
 }
@@ -168,12 +156,11 @@ createRestaurantHTML = (restaurant) => {
   div.className = 'card';
 
   const image = document.createElement('img');
-  image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   div.append(image);
 
   const info = document.createElement('div');
-  info.className = 'restaurant-info';
+  info.className = 'card-info';
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
@@ -187,15 +174,10 @@ createRestaurantHTML = (restaurant) => {
   address.innerHTML = restaurant.address;
   info.append(address);
 
-  // const moreContainer = document.createElement('div');
-  // moreContainer.className = "more";
-
   const link = document.createElement('a');
-  link.className = 'restaurant-link';
   link.innerHTML = 'View Details';
   link.href = DBHelper.urlForRestaurant(restaurant);
 
-  // moreContainer.append(button);
   info.append(link);
   div.append(info);
 
