@@ -149,7 +149,8 @@ nav h1 {
 
 /* Add a color to all links inside the list */
 #breadcrumb li a {
-  color: #0275d8;
+  padding-left: 10px;
+  color: darkred;
   text-decoration: none; }
 
 /* Add a color on mouse-over */
