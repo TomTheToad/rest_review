@@ -41,39 +41,10 @@ nav h1 {
   border-right: 5px solid silver;
   margin: auto; }
 
-#title {
+#title, nav a {
   font-family: 'Righteous', cursive;
   font-size: 40px;
   color: white; }
-
-/* =========== Navigation breadcrum ====================== */
-#breadcrumb {
-  padding: 10px 40px 16px;
-  list-style: none;
-  background-color: #eee;
-  font-size: 17px;
-  margin: 0;
-  width: calc(50% - 80px); }
-
-/* Display list items side by side */
-#breadcrumb li {
-  display: inline; }
-
-/* Add a slash symbol (/) before/behind each list item */
-#breadcrumb li + li:before {
-  padding: 8px;
-  color: black;
-  content: "/\00a0"; }
-
-/* Add a color to all links inside the list */
-#breadcrumb li a {
-  color: #0275d8;
-  text-decoration: none; }
-
-/* Add a color on mouse-over */
-#breadcrumb li a:hover {
-  color: #01447e;
-  text-decoration: underline; }
 
 /* ====================== Map ====================== */
 #map {
@@ -155,5 +126,62 @@ nav h1 {
   color: darkred;
   font-family: 'Righteous', cursive;
   font-size: 20pt; }
+
+/* =========== Navigation breadcrum ====================== */
+#breadcrumb {
+  list-style: none;
+  background-color: #eee;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+/* Display list items side by side */
+#breadcrumb li {
+  display: inline; }
+
+/* Add a slash symbol (/) before/behind each list item */
+#breadcrumb li + li:before {
+  color: black;
+  content: "/\00a0"; }
+
+/* Add a color to all links inside the list */
+#breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none; }
+
+/* Add a color on mouse-over */
+#breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline; }
+
+/* ======================= Restaurant Detail ==+===================== */
+#restaurant-container {
+  width: 100%;
+  margin: 0;
+  color: white;
+  align-content: center; }
+
+#restaurant-container img {
+  width: 100%; }
+
+#restaurant-container h1, h2, h3 {
+  text-align: center; }
+
+#reviews-container {
+  background-color: white;
+  padding: 30px;
+  border-top: 5px solid black; }
+
+#reviews-container li {
+  border-top: 2px solid darkred;
+  list-style: none; }
+
+#restaurant-hours {
+  padding: 20px; }
+
+ul {
+  padding: 0;
+  margin: 0; }
 
 /* ====================== @Media > 500 ====================== */
