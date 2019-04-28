@@ -134,7 +134,9 @@ nav h1 {
   font-size: 17px;
   margin: 0;
   padding: 0;
-  width: 100%; }
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px; }
 
 /* Display list items side by side */
 #breadcrumb li {
@@ -157,13 +159,16 @@ nav h1 {
 
 /* ======================= Restaurant Detail ==+===================== */
 #restaurant-container {
+  border-top: 2px solid darkred;
   width: 100%;
   margin: 0;
   color: white;
   align-content: center; }
 
 #restaurant-container img {
-  width: 100%; }
+  width: 100%;
+  border-bottom: 4px solid black;
+  border-top: 2px solid silver; }
 
 #restaurant-container h1, h2, h3 {
   text-align: center; }

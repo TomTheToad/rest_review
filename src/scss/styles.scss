@@ -165,6 +165,8 @@ nav h1 {
   margin: 0;
   padding: 0;
   width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* Display list items side by side */
@@ -193,6 +195,7 @@ nav h1 {
 
 /* ======================= Restaurant Detail ==+===================== */
 #restaurant-container {
+  border-top: 2px solid $highlight_primary;
   width: 100%;
   // padding: 30px;
   margin: 0;
@@ -203,6 +206,8 @@ nav h1 {
 
 #restaurant-container img {
   width: 100%;
+  border-bottom: 4px solid black;
+  border-top: 2px solid $highlight_secondary;
 }
 
 #restaurant-container h1, h2, h3 {
