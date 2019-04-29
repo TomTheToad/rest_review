@@ -99,63 +99,6 @@ nav h1 {
   text-align: center;
 }
 
-/* ======================= Restaurant Cards ==+===================== */
-#cards {
-  display: grid;
-  grid-auto-rows: auto;
-  grid-gap: 4rem;
-  // background-color: #f3f3f3;
-  background-color: $primary_bg;
-  margin: 0 auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 0;
-  align-content: center;
-  text-align: center;
-}
-
-.card {
-  width: 100%;
-  display: grid;
-  grid-template-rows: 2fr auto;
-  background: white;
-  border-top: 2px solid $highlight_secondary;
-  border-bottom: 6px solid black;
-}
-
-.card img {
-  width: 100%;
-}
-
-.card-info {
-  width: 100%;
-}
-
-.card-info h1 {
-  font-size: 2em;
-  color: white;
-  margin: 0px;
-  padding: 0px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  text-transform: uppercase;
-  background-color: $highlight_primary;
-  border-bottom: 2px solid $highlight_secondary;
-  // border-left: 5px solid $highlight_left;
-  // border-right: 5px solid $highlight_right;
-}
-
-.card-info p {
-  font-size: 2em;
-  margin: 2px;
-}
-
-.card-info a {
-  color: $highlight_primary;
-  font-family: 'Righteous', cursive;
-  font-size: 20pt;
-}
-
 /* =========== Navigation breadcrum ====================== */
 #breadcrumb {
   // padding: 10px 40px 16px;
@@ -236,5 +179,142 @@ ul {
   margin: 0;
 }
 
-/* ====================== @Media > 500 ====================== */
+/* ======================= Restaurant Cards ==+===================== */
+#cards {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-gap: 4rem;
+  // background-color: #f3f3f3;
+  background-color: $primary_bg;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0;
+  align-content: center;
+  text-align: center;
+}
 
+.card {
+  display: grid;
+  // grid-template: 1fr, 1fr;
+  grid-gap: 0;
+  width: 100%;
+  background: white;
+  border-top: 2px solid $highlight_secondary;
+  border-bottom: 6px solid black;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card h1 {
+  font-size: 2em;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+  background-color: $highlight_primary;
+  border-bottom: 2px solid $highlight_secondary;
+  // border-left: 5px solid $highlight_left;
+  // border-right: 5px solid $highlight_right;
+}
+
+.card p {
+  font-size: 2em;
+  margin: 2px;
+}
+
+.card a {
+  color: $highlight_primary;
+  font-family: 'Righteous', cursive;
+  font-size: 20pt;
+}
+
+/* ====================== @Media > 700 ====================== */
+@media screen and (min-width: 700px) {
+  #cards {
+    display: grid;
+    // grid-auto-rows: 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin: 2rem;
+    // background-color: $primary_bg;
+    // margin: 0 auto;
+    // margin-top: 2rem;
+    // margin-bottom: 2rem;
+    // padding: 0;
+    // align-content: center;
+    // text-align: center;
+  }
+
+.card-info h1 {
+  font-size: 1em;
+  // margin: 0px;
+  // padding: 0px;
+  // border-left: 5px solid $highlight_left;
+  // border-right: 5px solid $highlight_right;
+}
+
+.card-info p {
+  font-size: 14pt;
+  margin: 0px;
+}
+
+.card-info a {
+  color: $highlight_primary;
+  font-family: 'Righteous', cursive;
+  font-size: 12pt;
+}
+
+}
+/* ====================== @Media > 1060 ====================== */
+// @media screen and (min-width: 1060px) {
+//     #cards {
+//       display: grid;
+//       // grid-auto-rows: 0;
+//       grid-template-columns: repeat(5, 2fr);
+//       grid-gap: 2rem;
+//       margin: 10px;
+//   }
+
+  // .card-info h1 {
+  //   font-size: 1em;
+  //   padding-top: 2px;
+  //   padding-bottom: 2px;
+  //   margin: 0px;
+  //   // border-left: 5px solid $highlight_left;
+  //   // border-right: 5px solid $highlight_right;
+  // }
+  
+  // .card-info p {
+  //   font-size: 1em;
+  //   margin: 0px;
+  // }
+  
+  // .card-info a {
+  //   color: $highlight_primary;
+  //   font-family: 'Righteous', cursive;
+  //   font-size: 14pt;
+  // }
+
+}
+
+/* ====================== @Media > 11197 ====================== */
+// @media screen and (min-width: 1197px) {
+//   #cards {
+//     display: grid;
+//     // grid-auto-rows: 0;
+//     grid-template-columns: repeat(6, 1fr);
+//     grid-gap: 2rem;
+//     margin: 10px;
+// }
+
+// .card-info p {
+//   // font-size: 1.5em;
+//   padding: 10px;
+// }
+
+// }
