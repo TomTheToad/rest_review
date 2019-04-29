@@ -80,54 +80,6 @@ nav h1 {
   align-content: center;
   text-align: center; }
 
-/* ======================= Restaurant Cards ==+===================== */
-#cards {
-  display: grid;
-  grid-auto-rows: auto;
-  grid-gap: 4rem;
-  background-color: #333;
-  margin: 0 auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 0;
-  align-content: center;
-  text-align: center; }
-
-.card {
-  display: grid;
-  grid-gap: 0;
-  width: 100%;
-  background: white;
-  border-top: 2px solid silver;
-  border-bottom: 6px solid black; }
-
-.card img {
-  width: 100%; }
-
-.card-info {
-  display: grid;
-  width: 100%; }
-
-.card-info h1 {
-  font-size: 2em;
-  color: white;
-  margin: 0px;
-  padding: 0px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  text-transform: uppercase;
-  background-color: darkred;
-  border-bottom: 2px solid silver; }
-
-.card-info p {
-  font-size: 2em;
-  margin: 2px; }
-
-.card-info a {
-  color: darkred;
-  font-family: 'Righteous', cursive;
-  font-size: 20pt; }
-
 /* =========== Navigation breadcrum ====================== */
 #breadcrumb {
   list-style: none;
@@ -191,29 +143,71 @@ ul {
   padding: 0;
   margin: 0; }
 
+/* ======================= Restaurant Cards ==+===================== */
+#cards {
+  display: grid;
+  grid-gap: 4rem;
+  background-color: #333;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0;
+  align-content: center;
+  text-align: center; }
+
+.card {
+  display: grid;
+  grid-template-areas: "img" "img" "info";
+  grid-gap: 0;
+  width: 100%;
+  background: white;
+  border-top: 2px solid silver;
+  border-bottom: 6px solid black; }
+
+.card img {
+  grid-area: img;
+  width: 100%;
+  min-width: 241px; }
+
+.card-info {
+  grid-area: info;
+  white-space: nowrap; }
+
+.card h1 {
+  font-size: 1.5rem;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+  background-color: darkred;
+  border-bottom: 2px solid silver; }
+
+.card p {
+  line-height: 2;
+  font-size: 1.5em;
+  margin: 2px; }
+
+.card a {
+  color: darkred;
+  font-family: 'Righteous', cursive;
+  font-size: 2rem; }
+
 /* ====================== @Media > 700 ====================== */
 @media screen and (min-width: 700px) {
   #cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
-    margin: 2rem; }
-  .card-info h1 {
+    grid-template-columns: repeat(2, 1fr); }
+  .card h1 {
     font-size: 1em; }
-  .card-info p {
-    font-size: 14pt;
-    margin: 0px; }
-  .card-info a {
-    color: darkred;
-    font-family: 'Righteous', cursive;
-    font-size: 12pt; } }
+  .card p {
+    font-size: 1em; }
+  .card a {
+    font-size: 1.5em; }
+  .filter-options select {
+    width: 300px; } }
 
 /* ====================== @Media > 1060 ====================== */
 @media screen and (min-width: 1060px) {
   #cards {
-    display: grid;
-    grid-template-columns: repeat(5, 2fr);
-    grid-gap: 2rem;
-    margin: 10px; } }
-
-/* ====================== @Media > 11197 ====================== */
+    grid-template-columns: repeat(4, 2fr); } }
