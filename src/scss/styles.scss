@@ -71,7 +71,7 @@ nav h1 {
 /* ====================== Nav Skip Link ====================== */
 // Original css skip code - lightly modified
 // https://www.bignerdranch.com/blog/web-accessibility-skip-navigation-links/
-#skip {
+.skip {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   color: $highlight_primary;
@@ -84,14 +84,14 @@ nav h1 {
   overflow: hidden;
 }
 
-#skip:active, 
-#skip:focus, 
-#skip:hover {
+.skip:active, 
+.skip:focus, 
+.skip:hover {
   left: 0; 
   top: 0;
   width: auto; 
   height: auto; 
-  overflow: visible; 
+  visibility: hidden;
 }
 
 /* ====================== Map ====================== */

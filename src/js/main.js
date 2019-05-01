@@ -155,6 +155,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 createRestaurantHTML = (restaurant) => {
   const div = document.createElement('div');
   div.className = 'card';
+  div.tabIndex = '0';
 
   const image = document.createElement('img');
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
@@ -176,10 +177,16 @@ createRestaurantHTML = (restaurant) => {
   address.innerHTML = restaurant.address;
   info.append(address);
 
+  const label = document.createElement('label');
+  label.htmlFor = `${restaurant.id}`;
+  label.innerText = `Detail link for ${restaurant.name} restaurant`;
+  label.classList.add('skip');
+  info.append(label);
+
   const link = document.createElement('a');
   link.innerHTML = 'View Details';
+  link.id = `${restaurant.id}`;
   link.href = DBHelper.urlForRestaurant(restaurant);
-
   info.append(link);
   div.append(info);
 
