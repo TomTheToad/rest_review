@@ -119,7 +119,6 @@ updateRestaurants = () => {
       fillRestaurantsHTML();
     }
   })
-
 }
 
 /**

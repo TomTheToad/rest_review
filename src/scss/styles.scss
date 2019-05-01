@@ -313,3 +313,10 @@ ul {
       grid-template-columns: repeat(3, 2fr);
   }
 }
+
+/* ====================== @Media > 1060 ====================== */
+@media screen and (min-width: 1200px) {
+    #cards {
+      grid-template-columns: repeat(6, 2fr);
+  }
+}
