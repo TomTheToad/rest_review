@@ -1,6 +1,8 @@
 /* CSS Document */
 body {
   display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-auto-rows: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 10pt;
   line-height: 1.5;
@@ -9,9 +11,11 @@ body {
   width: 100%; }
 
 header {
+  grid-area: header;
   background-color: #252831; }
 
 main {
+  grid-area: main;
   display: grid;
   margin: 0 auto;
   padding: 0;
@@ -19,6 +23,7 @@ main {
   width: 100%; }
 
 footer {
+  grid-area: footer;
   background-color: #252831;
   color: #aaa;
   font-size: 8pt;

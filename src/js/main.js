@@ -204,7 +204,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 
 // TODO: find another way
 // Fix for resize issue
-window.onresize = () => document.location.reload();
+// window.onresize = () => document.location.reload();
 
 
 

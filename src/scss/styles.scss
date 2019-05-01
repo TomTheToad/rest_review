@@ -13,19 +13,25 @@ $highlight_secondary: silver;
 
 body {
   display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-auto-rows: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 10pt;
   line-height: 1.5;
 	background-color: $primary_bg;
 	margin: 0 auto;
   width: 100%;
+  // TODO: need a fix for height on selection
+  // height: 100%;
 }
 
 header {
+  grid-area: header;
   background-color: $secondary_bg;
 }
 
 main {
+  grid-area: main;
   display: grid;
   margin: 0 auto;
   padding: 0;
@@ -34,6 +40,7 @@ main {
 }
 
 footer {
+  grid-area: footer;
   background-color: $secondary_bg;
   color: #aaa;
   font-size: 8pt;
