@@ -119,6 +119,7 @@ updateRestaurants = () => {
       fillRestaurantsHTML();
     }
   })
+
 }
 
 /**
@@ -158,7 +159,7 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.alt = restaurant.name;
+  image.alt = `Picture of ${restaurant.name} restaurant`;
   div.append(image);
 
   const info = document.createElement('div');
@@ -200,6 +201,12 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 
+}
+
+// TODO: find another way
+// Fix for resize issue
+window.onresize = function () {
+  document.location.reload(true);
 }
 
 /* addMarkersToMap = (restaurants = self.restaurants) => {
