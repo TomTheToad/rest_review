@@ -160,22 +160,21 @@ nav h1 {
 #restaurant-name {
   grid-area: name; }
 
-#restaurant-img {
-  grid-area: img; }
-
 #restaurant-cuisine {
   grid-area: cuisine; }
 
 #restaurant-address {
   grid-area: address; }
 
-#restaurant-hours {
-  grid-area: hours; }
-
 #restaurant-container img {
+  grid-area: img;
   border-bottom: 4px solid black;
   border-top: 2px solid silver;
   width: 100%; }
+
+#restaurant-hours {
+  grid-area: hours;
+  margin-left: 20px; }
 
 #restaurant-container h1, h2, h3 {
   text-align: center; }
@@ -185,12 +184,13 @@ nav h1 {
   padding: 30px;
   border-top: 5px solid black; }
 
+#reviews-container ul {
+  display: grid;
+  grid-row: 1fr; }
+
 #reviews-container li {
   border-top: 2px solid darkred;
   list-style: none; }
-
-#restaurant-hours {
-  padding: 20px; }
 
 ul {
   padding: 0;
@@ -199,7 +199,7 @@ ul {
 /* ======================= Restaurant Cards ==+===================== */
 #cards {
   display: grid;
-  grid-gap: 4rem;
+  grid-gap: 2rem;
   background-color: #333;
   margin: 0 auto;
   margin-top: 2rem;
@@ -262,7 +262,11 @@ ul {
   .card a {
     font-size: 1.5em; }
   .filter-options select {
-    width: 300px; } }
+    width: 300px; }
+  #reviews-container ul {
+    grid-row: auto;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    grid-gap: 1.5rem; } }
 
 /* ====================== @Media > 1060 ====================== */
 @media screen and (min-width: 1060px) {
@@ -276,12 +280,10 @@ ul {
   #cards {
     grid-template-columns: repeat(4, 3fr); }
   #restaurant-container {
-    grid-auto-columns: 1fr;
-    grid-template-areas: "img name " "img cuisine " "img address" "img hours"; }
-  #restaurant-container h1, h2, h3 {
-    text-align: left;
-    margin-left: 5px;
-    padding: 0px; }
+    grid-auto-columns: 1fr 2fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-areas: ". img" "name img" "cuisine img" "address img" "hours img" ". img"; }
   #restaurant-container img {
     border-bottom: 0;
     border-top: 0;
