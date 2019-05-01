@@ -2,6 +2,7 @@
 body {
   display: grid;
   grid-template-areas: "head" "main" "footer";
+  grid-template-rows: auto;
   font-family: 'Roboto', sans-serif;
   font-size: 10pt;
   line-height: 1.5;
@@ -17,7 +18,6 @@ main {
   grid-area: main;
   margin: 0 auto;
   padding: 0;
-  min-height: 100%;
   width: 100%; }
 
 footer {
@@ -148,16 +148,34 @@ nav h1 {
 
 /* ======================= Restaurant Detail ==+===================== */
 #restaurant-container {
+  display: grid;
+  grid-column: 1fr;
+  grid-template-areas: "name " "img" "cuisine" "address" "hours";
   border-top: 2px solid darkred;
   width: 100%;
   margin: 0;
   color: white;
   align-content: center; }
 
+#restaurant-name {
+  grid-area: name; }
+
+#restaurant-img {
+  grid-area: img; }
+
+#restaurant-cuisine {
+  grid-area: cuisine; }
+
+#restaurant-address {
+  grid-area: address; }
+
+#restaurant-hours {
+  grid-area: hours; }
+
 #restaurant-container img {
-  width: 100%;
   border-bottom: 4px solid black;
-  border-top: 2px solid silver; }
+  border-top: 2px solid silver;
+  width: 100%; }
 
 #restaurant-container h1, h2, h3 {
   text-align: center; }
@@ -256,4 +274,16 @@ ul {
 /* ====================== @Media > 1200 ====================== */
 @media screen and (min-width: 1200px) {
   #cards {
-    grid-template-columns: repeat(4, 3fr); } }
+    grid-template-columns: repeat(4, 3fr); }
+  #restaurant-container {
+    grid-auto-columns: 1fr;
+    grid-template-areas: "img name " "img cuisine " "img address" "img hours"; }
+  #restaurant-container h1, h2, h3 {
+    text-align: left;
+    margin-left: 5px;
+    padding: 0px; }
+  #restaurant-container img {
+    border-bottom: 0;
+    border-top: 0;
+    padding: 0;
+    margin: 0; } }
