@@ -250,7 +250,7 @@ ul {
   #cards {
     grid-template-columns: repeat(3, 2fr); } }
 
-/* ====================== @Media > 1060 ====================== */
+/* ====================== @Media > 1200 ====================== */
 @media screen and (min-width: 1200px) {
   #cards {
-    grid-template-columns: repeat(6, 2fr); } }
+    grid-template-columns: repeat(4, 3fr); } }
