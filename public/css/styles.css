@@ -46,6 +46,28 @@ nav h1 {
   font-size: 40px;
   color: white; }
 
+/* ====================== Nav Skip Link ====================== */
+#skip {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: darkred;
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  height: 1px;
+  width: 1px;
+  text-align: left;
+  overflow: hidden; }
+
+#skip:active,
+#skip:focus,
+#skip:hover {
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  overflow: visible; }
+
 /* ====================== Map ====================== */
 #map {
   height: 400px;
@@ -216,4 +238,4 @@ ul {
   body {
     font-size: 14pt; }
   #cards {
-    grid-template-columns: repeat(4, 2fr); } }
+    grid-template-columns: repeat(3, 2fr); } }
